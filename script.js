@@ -51,7 +51,12 @@ function moveNoButton() {
 
 yesBtn.addEventListener("click", () => {
   modal.style.display = "flex";
+
+  setTimeout(() => {
+    fireworks();
+  }, 400);
 });
+
 
 function closeModal() {
   modal.style.display = "none";
