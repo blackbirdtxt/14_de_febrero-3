@@ -1,3 +1,12 @@
+const music = document.getElementById("bgMusic");
+
+document.addEventListener("click", () => {
+  if (music.paused) {
+    music.volume = 0.4; // volumen romántico, no invasivo
+    music.play();
+  }
+}, { once: true });
+
 const background = document.getElementById("background");
 
 const icons = ["💖","💕","💘","🌸","🌹","🌺","💞","💗"];
