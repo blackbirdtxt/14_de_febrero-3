@@ -48,6 +48,26 @@ function moveNoButton() {
   yesBtn.style.transform = `scale(${scale})`;
 }
 
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("click", moveNoButton);
+
+function moveNoButton() {
+  const padding = 20;
+
+  const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+  const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  noBtn.style.position = "fixed";
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+
+  // cada intento hace crecer el SÍ
+  scale += 0.15;
+  yesBtn.style.transform = `scale(${scale})`;
+}
 
 yesBtn.addEventListener("click", () => {
   modal.style.display = "flex";
