@@ -1,11 +1,3 @@
-const music = document.getElementById("bgMusic");
-
-document.addEventListener("click", () => {
-  if (music.paused) {
-    music.volume = 0.4; // volumen romántico, no invasivo
-    music.play();
-  }
-}, { once: true });
 
 const background = document.getElementById("background");
 
@@ -122,3 +114,13 @@ function fireworks() {
     setTimeout(() => spark.remove(), 1200);
   }
 }
+
+const music = document.getElementById("bgMusic");
+
+document.addEventListener("click", () => {
+  if (music.paused) {
+    music.volume = 0.4;
+    music.play();
+    console.log("🎶 Música iniciada");
+  }
+}, { once: true });
