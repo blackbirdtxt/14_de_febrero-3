@@ -56,3 +56,35 @@ yesBtn.addEventListener("click", () => {
 function closeModal() {
   modal.style.display = "none";
 }
+
+function fireworks() {
+  for (let i = 0; i < 40; i++) {
+    const spark = document.createElement("div");
+    spark.style.position = "fixed";
+    spark.style.width = "8px";
+    spark.style.height = "8px";
+    spark.style.background = "hsl(" + Math.random() * 360 + ",100%,70%)";
+    spark.style.borderRadius = "50%";
+    spark.style.left = "50%";
+    spark.style.top = "50%";
+    spark.style.zIndex = "10";
+
+    document.body.appendChild(spark);
+
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = Math.random() * 300 + 50;
+
+    spark.animate([
+      { transform: "translate(0,0)", opacity: 1 },
+      {
+        transform: `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px)`,
+        opacity: 0
+      }
+    ], {
+      duration: 1200,
+      easing: "ease-out"
+    });
+
+    setTimeout(() => spark.remove(), 1200);
+  }
+}
